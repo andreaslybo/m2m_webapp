@@ -1,0 +1,45 @@
+<div class="plant-container">
+  <div class="plant" [ngClass]="{'water': water >= 2500}">
+    <div class="plant-text">
+      <h1>Plant 1</h1>
+      <p>Temperatur: {{ temp | number: '1.2-2'}}°C</p>
+      <p>Luftfuktighet: {{ humid | number: '1.2-2'}}%</p>
+      <p>Vannivå: {{ water | number: '1.0-0'}}</p>
+      <div *ngIf="water < 2500" class="plant-status">😊 Planten er fornøyd</div>
+      <div *ngIf="water >= 2500" class="plant-status">🌊 Planten er tørst 🥺</div>
+    </div>
+  </div>
+  <div class="plant-img"></div>
+</div>
+<div class="switch-container">
+  <button class="switch" (click)="toggleGraphs()">
+    <ng-container *ngIf="displayGraphs">Skjul grafer</ng-container>
+    <ng-container *ngIf="!displayGraphs">Vis grafer</ng-container>
+  </button>
+</div>
+<div class="chart-container" *ngIf="displayGraphs">
+  <google-chart *ngIf="data" class="chart"
+      [title]="test"
+      [type]="pieType"
+      [data]="temperatureOverTime"
+      [width]=350
+      [height]=200
+      [options]="options_temperature">
+  </google-chart>
+  <google-chart *ngIf="data"
+      [title]="test"
+      [type]="pieType"
+      [data]="humidityOverTime"
+      [width]=350
+      [height]=200
+      [options]="options_humidity">
+  </google-chart>
+  <google-chart *ngIf="data"
+      [title]="test"
+      [type]="pieType"
+      [data]="waterOverTime"
+      [width]=350
+      [height]=200
+      [options]="options_water">
+  </google-chart>
+</div>

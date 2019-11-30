@@ -1,0 +1,18 @@
+<nav>
+    <div class="inner-nav">
+        <p>PlanteHub</p>
+    </div>
+</nav>
+<div class="content" *ngIf="!this.plant">
+  <h1>Fant ingen planter :(</h1>
+</div>
+<div class="content" *ngIf="this.plant">
+    <div class="sensors">
+      <app-plant 
+        [temp]="this.plant.temperature"
+        [humid]="this.plant.humidity"
+        [water]="this.plant.water"
+        [data]="this.plant.data">
+      </app-plant>
+    </div>
+</div>

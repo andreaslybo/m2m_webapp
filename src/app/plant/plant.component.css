@@ -1,0 +1,102 @@
+
+.plant-container {
+    width: 80%;
+    height: 400px;
+    margin: 50px auto 150px auto;
+}
+.chart {
+    padding-top: 630px;
+}
+.plant {
+    width: 100%;
+    height: 450px;
+    border-radius: 35px;
+    background-color: #0c9869;
+    background-image: url('/assets/img/pattern.png');
+    margin: 50px auto auto auto;
+    z-index: 1;
+    transition: background-color 0.4s linear;
+}
+.switch-container {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+}
+.switch {
+    width: 80%;
+    margin: auto;
+    height: 50px;
+    border: 0px;
+    text-align: center;
+    background: #0c9869;
+    color: #FFF;
+    border-radius: 10px;
+}
+.switch:hover {
+    background: #4dbe49;
+}
+
+.water {
+    background-color: #bb642f;
+}
+
+.plant-status {
+    margin-top: 25px;
+    font-size: 1.25em;
+}
+
+.plant-text {
+    width: 75%;
+    height: 150px;
+    position: relative;
+    top: 150px;
+    color: #FFF;
+    margin: auto;
+}
+.plant-text h1 {
+    text-align: center;
+}
+.plant-text p {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.plant-img {
+    background-image: url('/assets/img/cactucs.png');
+    width: 125px;
+    height: 175px;
+    margin: -500px auto;
+    z-index: 1000;
+}
+
+@media only screen and (min-width: 900px) {
+    .plant-container {
+        width: 350px;
+        margin: 50px 50px 150px 0px;
+        float: left;
+    }
+
+    .switch-container {
+        margin: 0px;
+    }
+
+    .switch-container, .switch {
+        width: 350px;
+    }
+}
+
+/* Tablet */
+@media only screen and (max-width: 900px) {
+    .chart {
+        padding-top: 0px;
+    }
+    .plant-container {
+        height: 335px;
+    }
+}
+
+/* Phone */
+@media only screen and (max-width: 767px) {
+
+}
